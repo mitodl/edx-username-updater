@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+/nbproject
+.idea/
+.redcar/
+codekit-config.json
+.pycharm_helpers/
+.project
+.pydevproject
+*.DS_Store
