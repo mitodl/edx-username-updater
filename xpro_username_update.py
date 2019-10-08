@@ -40,7 +40,7 @@ def ulid_username_user_qset():
 def updated_username_gen():
     for user in ulid_username_user_qset():
         old_username = user.username
-        initial_new_username = usernameify(user.name)
+        initial_new_username = usernameify(user.name, email=user.email)
         user.username = initial_new_username
         saved = False
         failed = False
