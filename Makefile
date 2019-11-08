@@ -1,5 +1,6 @@
 UPDATE_LIB_FILE=username_update_lib.py
 XPRO_UPDATER_SCRIPT=xpro_username_update
+XPRO_SPECIFIC_USER_UPDATER_SCRIPT=xpro_specific_username_update
 EDX_UPDATER_SCRIPT=edx_username_update
 EDX_FORUM_UPDATER_SCRIPT=edx_forum_username_update
 
@@ -9,14 +10,15 @@ ifndef UPDATE_REPO_PATH
 endif
 
 cleanup.xpro :
-	rm -f ./$(UPDATE_LIB_FILE) ./$(XPRO_UPDATER_SCRIPT).py
+	rm -f ./$(UPDATE_LIB_FILE) ./$(XPRO_UPDATER_SCRIPT).py ./$(XPRO_SPECIFIC_USER_UPDATER_SCRIPT).py
 
 cleanup.edx :
 	rm -f ./$(UPDATE_LIB_FILE) ./$(EDX_UPDATER_SCRIPT).py ./$(EDX_FORUM_UPDATER_SCRIPT).py;
 
 setup.xpro : checkenv cleanup.xpro
 	cp $(UPDATE_REPO_PATH)/$(UPDATE_LIB_FILE) . && \
-		cp $(UPDATE_REPO_PATH)/$(XPRO_UPDATER_SCRIPT).py .
+		cp $(UPDATE_REPO_PATH)/$(XPRO_UPDATER_SCRIPT).py . && \
+		cp $(UPDATE_REPO_PATH)/$(XPRO_SPECIFIC_USER_UPDATER_SCRIPT).py .
 
 setup.edx : checkenv cleanup.edx
 	cp $(UPDATE_REPO_PATH)/$(UPDATE_LIB_FILE) . && \
@@ -24,6 +26,9 @@ setup.edx : checkenv cleanup.edx
 
 run.xpro :
 	@echo "import $(XPRO_UPDATER_SCRIPT)" | python ./manage.py shell
+
+run.xpro.specific :
+	@echo "import $(XPRO_SPECIFIC_USER_UPDATER_SCRIPT)" | python ./manage.py shell
 
 run.edx :
 	@echo "import $(EDX_UPDATER_SCRIPT)" | python ./manage.py lms shell

@@ -16,6 +16,7 @@ FORUM_RESULT_JSON_FILENAME_BASE = "edx_forum_username_changes"
 
 RESULT_JSON_DIR_PATH = os.getenv("RESULT_JSON_DIR_PATH", ".")
 SKIP_USERNAME_JSON_FILE_WRITE = os.getenv("SKIP_USERNAME_JSON_FILE_WRITE", None)
+USERNAMES_TO_REGENERATE = os.getenv("USERNAMES_TO_REGENERATE", "")
 
 ResultFileSettings = namedtuple(
     "ResultFileSettings", "input_filename_env, input_json_env, input_filename_base, output_filename_base"
