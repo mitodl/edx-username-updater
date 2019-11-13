@@ -21,6 +21,7 @@ This project includes a Makefile to take care of some of these steps.
     
     ```bash
     pushd .; cd /tmp && git clone https://github.com/mitodl/edx-username-updater.git; popd
+    
     # If you want to use a branch other than master, make sure to check it out after cloning
     pushd .; cd /tmp/edx-username-updater && git fetch && git checkout -b <BRANCH_NAME> origin/<BRANCH_NAME>; popd
     ```
@@ -34,7 +35,8 @@ This project includes a Makefile to take care of some of these steps.
     
     ```bash
     # If you're running this on an xPro machine...
-    make -f $UPDATE_REPO_PATH/Makefile setup.xpro    
+    make -f $UPDATE_REPO_PATH/Makefile setup.xpro
+    
     # If you're running this on an Open edX machine...
     make -f $UPDATE_REPO_PATH/Makefile setup.edx
     ```
@@ -63,6 +65,7 @@ This can be changed with the `RESULT_JSON_DIR_PATH` env var.
 ```bash
 # To change all ulid-generated usernames...
 make -f $UPDATE_REPO_PATH/Makefile run.xpro
+
 # To regenerate usernames (based on full name or email) for specific users...
 export USERNAMES_TO_REGENERATE="existing-username-1,existing-username-2"
 make -f $UPDATE_REPO_PATH/Makefile run.xpro.specific
