@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.db import transaction
 from social_django.models import UserSocialAuth
 
-from student.forms import validate_username
+from openedx.core.djangoapps.user_authn.views.registration_form import validate_username
 
 import username_update_lib as update_lib
 
