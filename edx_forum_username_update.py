@@ -4,10 +4,10 @@ import json
 from django.contrib.auth import get_user_model
 
 from student.models import CourseEnrollment
-from lms.lib.comment_client.utils import perform_request as perform_forum_request
-from lms.lib.comment_client.user import User as CommentUser
-from lms.lib.comment_client.thread import Thread
-from lms.lib.comment_client.comment import Comment
+from openedx.core.djangoapps.django_comment_common.comment_client.utils import perform_request as perform_forum_request
+from openedx.core.djangoapps.django_comment_common.comment_client.user import User as CommentUser
+from openedx.core.djangoapps.django_comment_common.comment_clientlms.lib.comment_client.thread import Thread
+from openedx.core.djangoapps.django_comment_common.comment_client.comment import Comment
 
 import username_update_lib as update_lib
 
