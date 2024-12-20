@@ -1,3 +1,9 @@
+⛔️ DEPRECATION WARNING
+======================
+
+This repository is deprecated. Please see [open-edx-plugins](https://github.com/mitodl/open-edx-plugins) for all the future updates and development.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
 # edX Username Updater
 
 This is a set of scripts that can help facilitate the changing of usernames in Open edX,
